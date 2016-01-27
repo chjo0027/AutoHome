@@ -4,7 +4,14 @@ from tkinter import messagebox
 
 
 top = tkinter.Tk()
+top.attributes('-fullscreen', True)
 
+#vasttrafik1 = tkinter.PhotoImage(file="vasttrafik1.gif")
+photo = tkinter.PhotoImage(file="Smoke1.gif")
+background_label = tkinter.Label(image=photo)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+#Event, fixa allt som händer
 def trafficCallBack():
    messagebox.showinfo( "Trafik", "Västtrafik")
 
@@ -30,23 +37,42 @@ def propertiesCallBack():
     messagebox.showinfo("Inställningar", "Inställningar")
 
 
+#Knapparna, fixa storlek och placering
+f1 = tkinter.Frame(top, height = 100, width = 150)
+B1 = tkinter.Button(f1, bg = "blue", text = "Västtrafik",command = trafficCallBack)
+B2 = tkinter.Button(bg = "yellow", text ="Väder", command = weatherCallBack)
+B3 = tkinter.Button( bg = "green", text ="Schema", command = calendarCallBack)
+B4 = tkinter.Button( bg = "red", text ="Ljus", command = lightCallBack)
+B5 = tkinter.Button( bg = "purple", text ="Ljud", command = soundCallBack)
+B6 = tkinter.Button( bg = "orange", text ="Hemma", command = homeCallBack)
+B7 = tkinter.Button( bg = "pink", text ="Går", command = leavingCallBack)
+B8 = tkinter.Button( bg = "gold", text ="Inställningar", command = propertiesCallBack)
 
+B1.pack()
+B2.pack()
+B3.pack()
+B4.pack()
+B5.pack()
+B6.pack()
+B7.pack()
+B8.pack()
+f1.pack_propagate(0)
+f1.pack()
+#f2.pack_propagate(0)
+#f2.pack()
+#f3.pack_propagate(0)
+#f3.pack()
+#f4.pack_propagate(0)
+#f4.pack()
+#f4.pack_propagate(0)
+#f4.pack()
+#f5.pack_propagate(0)
+#f5.pack()
+#f6.pack_propagate(0)
+#f6.pack()
+#f7.pack_propagate(0)
+#f7.pack()
+#f8.pack_propagate(0)
+#f8.pack()
 
-B = tkinter.Button(top, bg = "blue", text ="Västtrafik", command = trafficCallBack)
-C = tkinter.Button(top, bg = "yellow", text ="Väder", command = weatherCallBack)
-D = tkinter.Button(top, bg = "green", text ="Schema", command = calendarCallBack)
-E = tkinter.Button(top, bg = "red", text ="Ljus", command = lightCallBack)
-F = tkinter.Button(top, bg = "purple", text ="Ljud", command = soundCallBack)
-G = tkinter.Button(top, bg = "orange", text ="Hemma", command = homeCallBack)
-H = tkinter.Button(top, bg = "pink", text ="Går", command = leavingCallBack)
-I = tkinter.Button(top, bg = "gold", text ="Inställningar", command = propertiesCallBack)
-
-B.pack()
-C.pack()
-D.pack()
-E.pack()
-F.pack()
-G.pack()
-H.pack()
-I.pack()
 top.mainloop()
