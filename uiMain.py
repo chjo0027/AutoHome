@@ -12,27 +12,36 @@ background_label = tkinter.Label(image=photo)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 #Event, fixa allt som händer
+
+#Få upp stations listan från (http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014006040000&friendlyname=Smaragdgatan+G%c3%b6teborg)
 def trafficCallBack():
    messagebox.showinfo( "Trafik", "Västtrafik")
 
+#Lägg in vädertjänst
 def weatherCallBack():
     messagebox.showinfo("Väder", "SMHI")
 
+#lägg in kalender
 def calendarCallBack():
     messagebox.showinfo("Schema", "Google Calendar")
 
+#Lägg till listan med ESP
 def lightCallBack():
     messagebox.showinfo("Ljus", "Ljussidan")
 
+#Ljud öppna spotify och koppla till högtalare
 def soundCallBack():
    messagebox.showinfo( "Ljud", "Spotify")
 
+#Kommando för ett visst ljusschema
 def homeCallBack():
     messagebox.showinfo("Hemma", "Tänd hemma")
 
+#Kommando för att släcka aktivt ljus
 def leavingCallBack():
     messagebox.showinfo("Går", "Släck hemma")
 
+#Kom på inställningar
 def propertiesCallBack():
     messagebox.showinfo("Inställningar", "Inställningar")
 
