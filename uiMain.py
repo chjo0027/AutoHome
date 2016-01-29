@@ -2,6 +2,7 @@ import tkinter
 import asyncio
 from tkinter import messagebox
 import webbrowser
+from planLosning import plan
 from ljus import send
 
 top = tkinter.Tk()
@@ -35,7 +36,9 @@ def calendarCallBack():
 
 #Lägg till listan med ESP
 def lightCallBack():
-    send("Computer on")
+    top.destroy()
+    plan()
+    #send("Computer on")
     #messagebox.showinfo("Ljus", "Ljussidan")
 
 #Ljud öppna spotify och koppla till högtalare
