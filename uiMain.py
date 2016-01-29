@@ -1,21 +1,25 @@
 import tkinter
 from tkinter import messagebox
 
-
-
 top = tkinter.Tk()
+top.geometry("1920x1080")
 top.attributes('-fullscreen', True)
 
+#Bilder
+vasttrafik1 = tkinter.PhotoImage(file="bilder//vasttrafik1.gif")
+ljus = tkinter.PhotoImage(file="bilder//lampa.gif")
+ljud = tkinter.PhotoImage(file="bilder//spotify.gif")
+smhi = tkinter.PhotoImage(file="bilder//smhi.gif")
+leaving = tkinter.PhotoImage(file="bilder//leaving.gif")
+calendar = tkinter.PhotoImage(file="bilder//calendar.gif")
+settings = tkinter.PhotoImage(file="bilder//settings.gif")
 #vasttrafik1 = tkinter.PhotoImage(file="vasttrafik1.gif")
-photo = tkinter.PhotoImage(file="Smoke1.gif")
-background_label = tkinter.Label(image=photo)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
 
 #Event, fixa allt som händer
-
-#Få upp stations listan från (http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014006040000&friendlyname=Smaragdgatan+G%c3%b6teborg)
 def trafficCallBack():
    messagebox.showinfo( "Trafik", "Västtrafik")
+   #Få upp stations listan från (http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014006040000&friendlyname=Smaragdgatan+G%c3%b6teborg)
 
 #Lägg in vädertjänst
 def weatherCallBack():
@@ -46,42 +50,24 @@ def propertiesCallBack():
     messagebox.showinfo("Inställningar", "Inställningar")
 
 
-#Knapparna, fixa storlek och placering
-f1 = tkinter.Frame(top, height = 100, width = 150)
-B1 = tkinter.Button(f1, bg = "blue", text = "Västtrafik",command = trafficCallBack)
-B2 = tkinter.Button(bg = "yellow", text ="Väder", command = weatherCallBack)
-B3 = tkinter.Button( bg = "green", text ="Schema", command = calendarCallBack)
-B4 = tkinter.Button( bg = "red", text ="Ljus", command = lightCallBack)
-B5 = tkinter.Button( bg = "purple", text ="Ljud", command = soundCallBack)
-B6 = tkinter.Button( bg = "orange", text ="Hemma", command = homeCallBack)
-B7 = tkinter.Button( bg = "pink", text ="Går", command = leavingCallBack)
-B8 = tkinter.Button( bg = "gold", text ="Inställningar", command = propertiesCallBack)
+#Knapparna
+B1 = tkinter.Button( image = vasttrafik1,command = trafficCallBack)
+B2 = tkinter.Button( image = smhi, command = weatherCallBack)
+B3 = tkinter.Button( image = calendar, command = calendarCallBack)
+B4 = tkinter.Button( image = ljus, command = lightCallBack)
+B5 = tkinter.Button( image = ljud, command = soundCallBack)
+B6 = tkinter.Button( text ="Hemma", command = homeCallBack)
+B7 = tkinter.Button( image = leaving, command = leavingCallBack)
+B8 = tkinter.Button( image = settings, command = propertiesCallBack)
 
-B1.pack()
-B2.pack()
-B3.pack()
-B4.pack()
-B5.pack()
-B6.pack()
-B7.pack()
-B8.pack()
-f1.pack_propagate(0)
-f1.pack()
-#f2.pack_propagate(0)
-#f2.pack()
-#f3.pack_propagate(0)
-#f3.pack()
-#f4.pack_propagate(0)
-#f4.pack()
-#f4.pack_propagate(0)
-#f4.pack()
-#f5.pack_propagate(0)
-#f5.pack()
-#f6.pack_propagate(0)
-#f6.pack()
-#f7.pack_propagate(0)
-#f7.pack()
-#f8.pack_propagate(0)
-#f8.pack()
+#Placering knappar
+B1.place(x=0,y=0)
+B2.place(x=480,y=0)
+B3.place(x=960,y=0)
+B4.place(x=1440,y=0)
+B5.place(x=0,y=540)
+B6.place(x=480,y=540)
+B7.place(x=960,y=540)
+B8.place(x=1440,y=540)
 
 top.mainloop()
