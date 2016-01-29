@@ -3,8 +3,8 @@ import asyncio
 from tkinter import messagebox
 import webbrowser
 from planLosning import plan
-from ljus import send
 
+nyplan = plan()
 top = tkinter.Tk()
 top.geometry("1920x1080")
 top.attributes('-fullscreen', True)
@@ -37,7 +37,7 @@ def calendarCallBack():
 #Lägg till listan med ESP
 def lightCallBack():
     top.destroy()
-    plan()
+    nyplan.plan()
     #send("Computer on")
     #messagebox.showinfo("Ljus", "Ljussidan")
 
