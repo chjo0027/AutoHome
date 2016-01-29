@@ -10,10 +10,10 @@ vasttrafik1 = tkinter.PhotoImage(file="bilder//vasttrafik1.gif")
 ljus = tkinter.PhotoImage(file="bilder//lampa.gif")
 ljud = tkinter.PhotoImage(file="bilder//spotify.gif")
 smhi = tkinter.PhotoImage(file="bilder//smhi.gif")
-leaving = tkinter.PhotoImage(file="bilder//leaving.gif")
+leaving = tkinter.PhotoImage(file="bilder//exit.gif")
 calendar = tkinter.PhotoImage(file="bilder//calendar.gif")
 settings = tkinter.PhotoImage(file="bilder//settings.gif")
-#vasttrafik1 = tkinter.PhotoImage(file="vasttrafik1.gif")
+home = tkinter.PhotoImage(file="bilder//home.gif")
 
 
 #Event, fixa allt som händer
@@ -56,7 +56,7 @@ B2 = tkinter.Button( image = smhi, command = weatherCallBack)
 B3 = tkinter.Button( image = calendar, command = calendarCallBack)
 B4 = tkinter.Button( image = ljus, command = lightCallBack)
 B5 = tkinter.Button( image = ljud, command = soundCallBack)
-B6 = tkinter.Button( text ="Hemma", command = homeCallBack)
+B6 = tkinter.Button( image = home, command = homeCallBack)
 B7 = tkinter.Button( image = leaving, command = leavingCallBack)
 B8 = tkinter.Button( image = settings, command = propertiesCallBack)
 
