@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import messagebox
+import webbrowser
 
 top = tkinter.Tk()
 top.geometry("1920x1080")
@@ -18,7 +19,8 @@ home = tkinter.PhotoImage(file="bilder//home.gif")
 
 #Event, fixa allt som händer
 def trafficCallBack():
-   messagebox.showinfo( "Trafik", "Västtrafik")
+   webbrowser.open_new('http://sebastiannilsson.com/vasttrafik-widget/next_trips/results?from=Smaragdgatan&to=Lantmilsgatan&max_results=4&weather_image=&no_refresh=0&no_refresh=1')
+   #messagebox.showinfo( "Trafik", "Västtrafik")
    #Få upp stations listan från (http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014006040000&friendlyname=Smaragdgatan+G%c3%b6teborg)
 
 #Lägg in vädertjänst
