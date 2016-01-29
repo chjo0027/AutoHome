@@ -1,6 +1,8 @@
 import tkinter
+import asyncio
 from tkinter import messagebox
 import webbrowser
+from ljus import send
 
 top = tkinter.Tk()
 top.geometry("1920x1080")
@@ -33,7 +35,8 @@ def calendarCallBack():
 
 #Lägg till listan med ESP
 def lightCallBack():
-    messagebox.showinfo("Ljus", "Ljussidan")
+    send("Computer on")
+    #messagebox.showinfo("Ljus", "Ljussidan")
 
 #Ljud öppna spotify och koppla till högtalare
 def soundCallBack():
