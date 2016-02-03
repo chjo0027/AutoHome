@@ -20,17 +20,20 @@ class plan:
         background_label = tkinter.Label(app, image=ritning)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-        def trafficCallBack():
+        def lampa1():
             if self.computer_state == "on":
                 send("Computer off")
                 self.computer_state = "off"
                 print("on")
-            else:
+            elif self.computer_state == "off":
                 send("Computer on")
                 self.computer_state = "on"
                 print("off")
+            else:
+                return
 
-        B1 = tkinter.Button(image=lampan, command=trafficCallBack)
+
+        B1 = tkinter.Button(image=lampan, command=lampa1)
         B1.place(x=125,y=700)
         #self.app.after(20,plan)
         app.mainloop()
