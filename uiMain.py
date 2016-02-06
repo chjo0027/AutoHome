@@ -6,12 +6,11 @@ from planLosning import plan
 
 class startsida:
     
-    def UI(self):
+    def startsida(self):
         nyplan = plan()
         top = tkinter.Tk()
         top.geometry("1920x1080")
         top.attributes('-fullscreen', True)
-        #Bilder
         vasttrafik1 = tkinter.PhotoImage(file="bilder//vasttrafik1.gif")
         ljus = tkinter.PhotoImage(file="bilder//lampa.gif")
         ljud = tkinter.PhotoImage(file="bilder//spotify.gif")
