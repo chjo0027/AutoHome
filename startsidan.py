@@ -13,7 +13,6 @@ class startsida:
 
 
     def sida(self):
-        print('va fan')
         nyplan = planLosning.plan()
         top = tkinter.Tk()
         top.geometry("1920x1080")
@@ -26,19 +25,17 @@ class startsida:
         calendar = tkinter.PhotoImage(file="bilder//calendar.gif")
         settings = tkinter.PhotoImage(file="bilder//settings.gif")
         home = tkinter.PhotoImage(file="bilder//home.gif")
-         #Event, fixa allt som händer
+        #Event, fixa allt som händer
         def trafficCallBack():
             webbrowser.open_new('http://sebastiannilsson.com/vasttrafik-widget/next_trips/results?from=Smaragdgatan&to=Lantmilsgatan&max_results=4&weather_image=&no_refresh=0&no_refresh=1')
-               #messagebox.showinfo( "Trafik", "Västtrafik")
-               #Få upp stations listan från (http://www.vasttrafik.se/nasta-tur-fullskarm/?externalid=9021014006040000&friendlyname=Smaragdgatan+G%c3%b6teborg)
 
-            #Lägg in vädertjänst
+
         def weatherCallBack():
-            messagebox.showinfo("Väder", "SMHI")
+            webbrowser.open_new('http://www.wunderground.com/cgi-bin/findweather/getForecast?brand=wxmap&query=57.64436,11.89600&lat=57.64436&lon=11.89600&zoom=11&type=terrain&units=metric&rad=0&sat=0&svr=0&cams=0&tor=0&wxsn=1&wxsn.mode=temp&wxsn.opa=50&wxsn.bcdgtemp=0&wxsn.rf=0')
 
             #lägg in kalender
         def calendarCallBack():
-            messagebox.showinfo("Schema", "Google Calendar")
+            webbrowser.open_new('https://calendar.google.com/calendar/render?tab=wc#main_7%7Cweek')
 
             #Lägg till listan med ESP
         def lightCallBack():
@@ -61,7 +58,7 @@ class startsida:
 
             #Kom på inställningar
         def propertiesCallBack():
-            messagebox.showinfo("Inställningar", "Inställningar")
+            quit()
 
 
             #Knapparna
