@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 import tkinter
-import asyncio
+from getWeather import getWeather
 from tkinter import messagebox
 import webbrowser
 import planLosning
@@ -8,6 +9,7 @@ class startsida:
 
     def __init__(self):
         pass
+        self.weather = ''
 
         #self.nyplan = planLosning.plan()
 
@@ -31,7 +33,11 @@ class startsida:
 
 
         def weatherCallBack():
-            webbrowser.open_new('http://www.wunderground.com/cgi-bin/findweather/getForecast?brand=wxmap&query=57.64436,11.89600&lat=57.64436&lon=11.89600&zoom=11&type=terrain&units=metric&rad=0&sat=0&svr=0&cams=0&tor=0&wxsn=1&wxsn.mode=temp&wxsn.opa=50&wxsn.bcdgtemp=0&wxsn.rf=0')
+            self.weather = getWeather()
+            toplevel = tkinter.Toplevel()
+            label1 = tkinter.Label(toplevel, text=self.weather, height=0, width=50)
+            label1.pack()
+            #webbrowser.open_new('http://www.wunderground.com/cgi-bin/findweather/getForecast?brand=wxmap&query=57.64436,11.89600&lat=57.64436&lon=11.89600&zoom=11&type=terrain&units=metric&rad=0&sat=0&svr=0&cams=0&tor=0&wxsn=1&wxsn.mode=temp&wxsn.opa=50&wxsn.bcdgtemp=0&wxsn.rf=0')
 
             #lägg in kalender
         def calendarCallBack():

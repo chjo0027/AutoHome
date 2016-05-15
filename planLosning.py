@@ -21,7 +21,7 @@ class plan:
         app.attributes('-fullscreen', True)
         ritning = tkinter.PhotoImage(file="bilder//ritning.gif")
         lampan = tkinter.PhotoImage(file="bilder//lampa2.gif")
-        bakat = tkinter.PhotoImage(file="bilder//exit.gif")
+        bakat = tkinter.PhotoImage(file="bilder//exit_small.gif")
         background_label = tkinter.Label(app, image=ritning)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
         
@@ -46,7 +46,7 @@ class plan:
         #kolla om det funkar
         B2 = tkinter.Button(image=bakat, command=back)
         B1.place(x=125,y=700)
-        B2.place(x=500,y=500)
+        B2.place(x=1872,y=0)
 
         #self.app.after(20,plan)
         app.mainloop()
